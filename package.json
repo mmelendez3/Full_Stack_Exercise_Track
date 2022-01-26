@@ -14,5 +14,13 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmelendez3/project3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mmelendez3/project3/issues"
+  },
+  "homepage": "https://github.com/mmelendez3/project3#readme"
 }
