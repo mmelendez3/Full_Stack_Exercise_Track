@@ -9,7 +9,7 @@ const exerciseSchema = new Schema(
       minlength: 1,
       maxlength: 280
     },
-    createdAt: {
+    date: {
       type: Date,
       default: Date.now,
       get: timestamp => dateFormat(timestamp)
