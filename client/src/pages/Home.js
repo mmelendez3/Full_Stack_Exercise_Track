@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 const Home = () => {
   return (
     <main>
-      <p>Hello</p>
+      <p>Homepage Content Goes Here</p>
     </main>
   );
 };
