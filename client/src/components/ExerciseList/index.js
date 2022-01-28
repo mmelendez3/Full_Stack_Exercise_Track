@@ -13,7 +13,7 @@ const ExerciseList = ({ exercise, description }) => {
           <div key={exercise._id}>
             <p>
               {exercise.username}
-              for {exercise.duration} minutes, logged on {exercise.createdAt}
+              for {exercise.duration} minutes, logged on {exercise.date}
             </p>
           </div>
         ))}
