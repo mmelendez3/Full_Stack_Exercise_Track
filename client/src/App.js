@@ -12,6 +12,7 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import LogForm from './pages/Log';
 
 function App() {
   const httpLink = createHttpLink({
@@ -30,6 +31,7 @@ function App() {
       </div>
       <Login></Login>
       <Signup></Signup>
+      <LogForm></LogForm>
       <Footer />
     </ApolloProvider>
   );
