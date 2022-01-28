@@ -18,5 +18,8 @@
         "titleBar.inactiveBackground": "#433c7f99",
         "titleBar.inactiveForeground": "#e7e7e799"
     },
-    "peacock.color": "#433c7f"
+    "peacock.color": "#433c7f",
+    "cSpell.words": [
+        "mern"
+    ]
 }

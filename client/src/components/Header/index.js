@@ -9,13 +9,14 @@ const Header = () => {
       <nav>
         <ul>
           <li>
-            <a href="#login">Login</a>
+            <a href="/login">Login</a>
+          </li>
+          <a href="/signup">Signup</a>
+          <li>
+            <a href="/log">Log Exercise</a>
           </li>
           <li>
-            <a href="#log">Log Exercise</a>
-          </li>
-          <li>
-            <a href="#view">View Log</a>
+            <a href="/view">View Log</a>
           </li>
         </ul>
       </nav>
