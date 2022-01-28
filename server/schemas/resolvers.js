@@ -56,9 +56,9 @@ const resolvers = {
 			if (context.user) {
 				//Updates User by removing the exercise ID from the exercise array property
 				const updatedUser = await User.findOneAndUpdate({ _id: context.user._id }, { $pull: { savedExercises: { exerciseId: args._id } } }, { new: true });
-				await User.findByIdAndUpdate({ _id: context.user._id }, { $push: { exercises: updatedExercise._id } }, { new: true });
+
 				//Removes exercise
-				await Exercise.findByIdAndRemove({ _id: context.user._id },){
+				await Exercise.findByIdAndRemove({ _id: args._id },){
 
 				}
 				return updatedUser;
