@@ -58,7 +58,7 @@ const resolvers = {
 				const updatedUser = await User.findOneAndUpdate({ _id: context.user._id }, { $pull: { savedExercises: { exerciseId: args._id } } }, { new: true });
 
 				//Removes exercise
-				await Exercise.findByIdAndRemove({ _id: args._id });
+				await Exercise.findOneAndRemove({ _id: args._id });
 				return updatedUser;
 			}
 			throw new AuthenticationError("You need to be logged in!");
