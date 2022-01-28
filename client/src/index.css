@@ -1,6 +1,47 @@
+:root {
+  --primary: #eb7d34;
+  --secondary: #C66A39;
+  --tertiary: #505050;
+  --quatrinary: #EBEBE9;
+}
+
+header {
+  background-color: var(--primary);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 15px;
+}
+
+header h1 {
+  color: #ffffff;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+nav ul{
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+}
+
+nav li a {
+  padding-right: 30px;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
 body {
   font-family: 'Lato', sans-serif;
+  background-image: url("assets/running.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
 }
+
 
 h1,
 h2,
@@ -11,18 +52,6 @@ h6 {
   font-family: 'Montserrat', sans-serif;
 }
 
-.small {
-  font-weight: 300;
-  font-style: italic;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+/* footer {
+  background-color: var(--tertiary);
+} */

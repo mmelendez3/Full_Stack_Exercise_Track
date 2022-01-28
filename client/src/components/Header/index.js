@@ -7,7 +7,7 @@ const Header = () => {
         <h1>Full Stack Exercise Track</h1>
       </div>
       <nav>
-        <ul>
+        <ul className="nav-links">
           <li>
             <a href="#login">Login</a>
           </li>
