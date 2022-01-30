@@ -1,7 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Auth from '../../utils/auth';
 
 const Header = () => {
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
   return (
     <header>
       <div className="header-logo">
@@ -9,16 +14,24 @@ const Header = () => {
       </div>
       <nav>
         <ul className="nav-links">
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-            <Link to="/signup">Signup</Link>
-          <li>
-            <Link to="/log">Log Exercise</Link>
-          </li>
-          <li>
-            <Link to="/view">View Log</Link>
-          </li>
+          {Auth.loggedIn() ? (
+            <>
+              <li>
+                <Link to="/log">Log Exercise</Link>
+              </li>
+              <li>
+                <Link to="/view">View Log</Link>
+              </li>
+              <a href="/" onClick={logout}>
+                Logout
+              </a>
+            </>
+          ) : (
+            <>
+              <Link to="/login">Login</Link>
+              <Link to="/signup">Signup</Link>
+            </>
+          )}
         </ul>
       </nav>
     </header>
