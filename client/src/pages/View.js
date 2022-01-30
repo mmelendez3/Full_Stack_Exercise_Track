@@ -10,7 +10,7 @@ const ViewLog = () => {
   console.log(exercise);
   return (
     <main>
-      <div className="view-container">
+      <div className="view-container form-container">
         <div className="view-log">
           {' '}
           {loading ? (

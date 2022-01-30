@@ -29,7 +29,7 @@ const Login = (props) => {
       <div className="form-container">
         <h2>Login</h2>
         <form onSubmit={handleFormSubmit}>
-          <label>Email</label>
+          <label className='form-label'>Email</label>
           <input
             className="form-input"
             placeholder="Your email"
@@ -38,8 +38,8 @@ const Login = (props) => {
             id="email"
             value={formState.email}
             onChange={handleChange}
-          ></input>
-          <label>Password</label>
+          ></input><br></br>
+          <label className='form-label'>Password</label>
           <input
             className="form-input"
             placeholder="******"
@@ -49,7 +49,7 @@ const Login = (props) => {
             value={formState.password}
             onChange={handleChange}
           />
-          <button type="submit">Submit</button>
+          <button class="btn third" type="submit">Submit</button>
         </form>
       </div>
     </main>

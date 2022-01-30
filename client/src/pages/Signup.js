@@ -24,7 +24,7 @@ const Signup = () => {
 
   return (
     <main className="signup-page">
-      <div className="signup-container">
+      <div className="signup-container form-container">
         <h2>Signup</h2>
         <form onSubmit={handleFormSubmit}>
           <label>Username:</label>
@@ -57,7 +57,7 @@ const Signup = () => {
             value={formState.password}
             onChange={handleChange}
           />
-          <button className="btn" type="submit">Submit</button>
+          <button className="btn third" type="submit">Submit</button>
         </form>
       </div>
     </main>
