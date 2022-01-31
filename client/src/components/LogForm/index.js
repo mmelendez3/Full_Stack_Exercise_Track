@@ -13,7 +13,7 @@ const LogForm = () => {
   const [addExercise, { error }] = useMutation(ADD_EXERCISE, {
     update(cache, { data: { addExercise } }) {
       try {
-        // update thought array's cache
+        // update exercse array's cache
         // could potentially not exist yet, so wrap in a try/catch
         const { exercise } = cache.readQuery({ query: QUERY_EXERCISE });
         cache.writeQuery({
