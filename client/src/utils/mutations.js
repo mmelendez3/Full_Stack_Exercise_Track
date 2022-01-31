@@ -23,3 +23,15 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_EXERCISE = gql`
+  mutation addExercise($id: ID!) {
+    addExercise(exerciseId: $id) {
+      _id
+      description
+      date
+      username
+      duration
+    }
+  }
+`;
