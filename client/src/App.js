@@ -14,8 +14,8 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import LogForm from './pages/Log';
-import ViewLog from './pages/View';
+import Log from './pages/Log';
+// import ViewLog from './pages/View';
 import NoMatch from './pages/NoMatch';
 
 function App() {
@@ -46,9 +46,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
-            <Route exact path="/log" component={LogForm} />
-            <Route exact path="/view" component={ViewLog} />
-
+            <Route exact path="/log" component={Log} />
             <Route component={NoMatch} />
           </Switch>
         </div>

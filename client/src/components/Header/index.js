@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <header>
       <div className="header-logo">
-        <h1>Full Stack Exercise Track</h1>
+        <Link to="/">Full Stack Exercise Track</Link>
       </div>
       <nav>
         <ul className="nav-links">
@@ -18,9 +18,6 @@ const Header = () => {
             <>
               <li>
                 <Link to="/log">Log Exercise</Link>
-              </li>
-              <li>
-                <Link to="/view">View Log</Link>
               </li>
               <a href="/" onClick={logout}>
                 Logout
