@@ -54,6 +54,7 @@ const LogForm = () => {
       <form onSubmit={handleFormSubmit}>
         <label>Exercise Description:</label>
         <input placeholder="exercise" onChange={handleChange}></input>
+        <br></br>
         <label>Duration(minutes): </label>
         <input placeholder="30" onChange={handleChange}></input>
         <br />

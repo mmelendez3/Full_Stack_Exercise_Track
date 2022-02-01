@@ -17,7 +17,7 @@ header {
   color: #ffffff;
   font-size: 2.3rem;
   text-transform: uppercase;
-  padding-left: 30px;
+  margin: 1rem;
 }
 
 .header-logo a {
@@ -33,6 +33,12 @@ nav ul {
   list-style: none;
 }
 
+nav ul li {
+  text-align: center;
+  width: 200px;
+  margin: 1rem;
+}
+
 .nav-links a {
   color: #ffffff;
   /* padding-right: 30px;
@@ -41,6 +47,7 @@ nav ul {
   font-size: 18px;
   text-decoration: none;
   text-transform: uppercase;
+  margin: 1rem;
 }
 
 .nav-links a:visited {
@@ -225,8 +232,23 @@ footer {
     background-size: cover;
     background-image: url('assets/running.jpg');
     margin: 0;
-    height: 100%;
+    height: 100vh;
   }
+
+  header {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 0px;
+  }
+
+  .nav-links a {
+    margin: 0px;
+  }
+
   .form-inline input {
     margin: 10px 0;
   }
@@ -235,5 +257,13 @@ footer {
   .btn-log {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+@media (max-width: 800px) {
+  .header-logo {
+    font-size: 2rem;
+    margin: 0.5rem;
+    padding: 0px;
   }
 }
