@@ -8,6 +8,7 @@ export const QUERY_EXERCISES = gql`
       description
       date
       username
+      duration
     }
   }
 `;
