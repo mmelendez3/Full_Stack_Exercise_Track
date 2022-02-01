@@ -47,9 +47,11 @@ nav ul{
 
 body {
   font-family: 'Lato', sans-serif;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat; background-size: cover;
   background-image: url("assets/running.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+
   margin: 0;
   height: 100%;
 }
