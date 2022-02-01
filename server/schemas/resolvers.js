@@ -6,20 +6,33 @@ const resolvers = {
 	Query: {
 		me: async (parent, args, context) => {
 			if (context.user) {
-				const userData = await User.findOne({ _id: context.user._id }).select("-__v -password").populate("exercises");
+				const userData = await User.findOne({ _id: context.user._id })
+				.select("-__v -password")
+				.populate("exercises");
 				return userData;
 			}
 			throw new AuthenticationError("Not logged in");
 		},
-		//   exercises: async (parent, { username }) => {
-		//     const params = username ? { username } : {};
-		//     return Exercise.find(params).sort({ createdAt: -1 });
-		//   },
+		exercises: async (parent, { username }) => {
+			const params = username ? { username } : {};
+			return Exercise.find(params).sort({ date: -1 });
+		  },
 
 		//get exercise by ID
 		exercise: async (parent, { _id }) => {
 			return Exercise.findOne({ _id });
 		},
+		users: async () => {
+			return User.find()
+			  .select("-__v -password")
+			  .populate("exercises");
+		  },
+		  // get a user by username
+		  user: async (parent, { username }) => {
+			return User.findOne({ username })
+			  .select("-__v -password")
+			  .populate("exercises");
+		  },
 	},
 
 	Mutation: {
@@ -45,8 +58,13 @@ const resolvers = {
 		addExercise: async (parent, args, context) => {
 			if (context.user) {
 				const exercise = await Exercise.create({ ...args, username: context.user.username });
-				const updatedUser = await User.findByIdAndUpdate({ _id: context.user._id }, { $push: { exercises: exercise._id } }, { new: true });
-				return updatedUser;
+
+				await User.findByIdAndUpdate(
+					{ _id: context.user._id }, 
+					{ $push: { exercises: exercise._id } }, 
+					{ new: true }
+					);
+				return exercise;
 			}
 			throw new AuthenticationError("You need to be logged in!");
 		},
