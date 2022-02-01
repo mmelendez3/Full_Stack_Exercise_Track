@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ExerciseList = ({ exercise, description }) => {
+const ExerciseList = ({ exercises, description }) => {
   if (!exercises.length) {
     return <h3>No exercises logged</h3>;
   }
