@@ -51,7 +51,6 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat; background-size: cover;
   background-image: url("assets/running.jpg");
-
   margin: 0;
   height: 100%;
 }
@@ -214,6 +213,14 @@ footer {
 }
 
 @media (max-width: 1024px) {
+  body {
+    background-position: right center;
+    background-attachment: fixed;
+    background-repeat: no-repeat; background-size: cover;
+    background-image: url("assets/running.jpg");
+    margin: 0;
+    height: 100%;
+  }
   .form-inline input {
     margin: 10px 0;
   }
