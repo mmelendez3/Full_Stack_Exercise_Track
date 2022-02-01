@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_EXERCISE = gql`
-  query exercise($username: String) {
-    exercise(username: $username) {
+  query exercise($id: ID!) {
+    exercise(_id: $id) {
       _id
       username
       description
