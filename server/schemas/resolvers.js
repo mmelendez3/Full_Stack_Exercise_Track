@@ -107,7 +107,7 @@ const resolvers = {
     // and replaces description and duration with argument values
 		updateExercise: async (parent, args, context) => {
 			if (context.user) {
-				const updatedExercise = await Exercise.findByIdAndUpdate({ _id: context.user._id }, { $push: { exercises: exercise._id } }, { new: true });
+				const updatedExercise = await Exercise.findByIdAndUpdate({ _id: args._id }, { $push: { description: args.description, duration: args.duration } }, { new: true });
 				
         // return updatedExercise;
 				return updatedExercise;
