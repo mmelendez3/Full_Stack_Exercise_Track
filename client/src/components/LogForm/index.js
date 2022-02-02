@@ -26,17 +26,16 @@ const LogForm = () => {
   //   },
   // });
 
-  const [addExercise, { error, loading, data }] = useMutation(ADD_EXERCISE)
+  const [addExercise, { error, loading, data }] = useMutation(ADD_EXERCISE);
 
   // update state based on form input changes
   const handleChange = (event, input) => {
-    if (input === "exercise") {
-      setFormState({...formState, exercise: event.target.value});
+    if (input === 'exercise') {
+      setFormState({ ...formState, exercise: event.target.value });
+    } else if (input === 'duration') {
+      setFormState({ ...formState, duration: event.target.value });
     }
-    else if (input === "duration") {
-      setFormState({...formState, duration: event.target.value});
-    }
-    console.log(formState)
+    console.log(formState);
   };
 
   // submit form
@@ -45,8 +44,13 @@ const LogForm = () => {
 
     try {
       await addExercise({
-        variables: { description: formState.exercise, duration: formState.duration },
-      }).then((exercise) => {console.log(exercise)});
+        variables: {
+          description: formState.exercise,
+          duration: formState.duration,
+        },
+      }).then((exercise) => {
+        console.log(exercise);
+      });
 
       // clear form value
       setFormState({
@@ -57,22 +61,35 @@ const LogForm = () => {
       console.error(e);
     }
   };
+
   return (
     <div className="log-container">
       <h2 className="log-title">Log Your Exercises</h2>
-      <form className='form-inline' onSubmit={handleFormSubmit}>
-        <label className='log-form-label'>Exercise Description:</label>
-        <input className='log-form-input' placeholder="exercise" onChange={(event)=> handleChange(event, "exercise")}></input>
-        <label className='log-form-label'>Duration(minutes): </label>
-        <input className='log-form-input' placeholder="30" onChange={(event)=> handleChange(event, "duration")}></input>
-        <button className="btn-log third" type="submit">
+      <form className="form-inline" onSubmit={handleFormSubmit}>
+        <label className="log-form-label">Exercise Description:</label>
+        <input
+          className="log-form-input"
+          placeholder="exercise"
+          onChange={(event) => handleChange(event, 'exercise')}
+        ></input>
+        <label className="log-form-label">Duration(minutes): </label>
+        <input
+          className="log-form-input"
+          placeholder="30"
+          onChange={(event) => handleChange(event, 'duration')}
+        ></input>
+        <button
+          className="btn-log third"
+          type="submit"
+          onClick={(event) => (window.location.href = '/')}
+        >
           Log Exercise
         </button>
       </form>
     </div>
   );
 };
-  export default LogForm;
+export default LogForm;
 
 //   const [exerciseText, setText] = useState('');
 
@@ -141,5 +158,3 @@ const LogForm = () => {
 //     </div>
 //   );
 // };
-
-

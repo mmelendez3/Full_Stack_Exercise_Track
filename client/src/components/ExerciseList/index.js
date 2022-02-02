@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-
+import { Link } from 'react-router-dom';
 
 const ExerciseList = ({ exercises, description }) => {
   if (!exercises.length) {
@@ -14,9 +13,11 @@ const ExerciseList = ({ exercises, description }) => {
         exercises.map((exercise) => (
           <div key={exercise._id}>
             <p>
-              {exercise.username} did {exercise.description} 
+              {exercise.username} did {exercise.description}
               for {exercise.duration} minutes, logged on {exercise.date}
             </p>
+            <button>Edit</button>
+            <button>Delete</button>
           </div>
         ))}
     </div>
