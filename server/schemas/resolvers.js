@@ -103,13 +103,14 @@ const resolvers = {
 			throw new AuthenticationError("You need to be logged in!");
 		},
 
+    //Takes an exercise ID, description, and duration
+    // and replaces description and duration with argument values
 		updateExercise: async (parent, args, context) => {
 			if (context.user) {
-				const exercise = 
-				// const updatedUser =
-				await Exercise.findByIdAndUpdate({ _id: context.user._id }, { $push: { exercises: exercise._id } }, { new: true });
-				// return updatedUser;
-				return exercise;
+				const updatedExercise = await Exercise.findByIdAndUpdate({ _id: context.user._id }, { $push: { exercises: exercise._id } }, { new: true });
+				
+        // return updatedExercise;
+				return updatedExercise;
 			}
 			throw new AuthenticationError("You need to be logged in!");
 		},
