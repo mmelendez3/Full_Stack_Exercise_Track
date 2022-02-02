@@ -101,7 +101,23 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
 
-    
+    addExercise: async (parent, args, context) => {
+      if (context.user) {
+        const exercise = await Exercise.create({
+          ...args,
+          username: context.user.username,
+        });
+        // const updatedUser =
+        await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $push: { exercises: exercise._id } },
+          { new: true }
+        );
+        // return updatedUser;
+        return exercise;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
 
     //Deletes Exercise data of exercise with _id, also updates user by removing _id from its exercise array
     removeExercise: async (parent, args, context) => {
