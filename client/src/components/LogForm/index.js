@@ -56,8 +56,6 @@ const LogForm = () => {
         <input className="log-form-input" placeholder="exercise" onChange={handleChange}></input>
         <label className="log-form-label">Duration(minutes): </label>
         <input className="log-form-input" placeholder="30" onChange={handleChange}></input>
-        <label className="log-form-label">Date:</label>
-        <input className="log-form-input" placeholder="01/01/22" onChange={handleChange}></input>
         <button className="btn-log third" type="submit">
           Log Exercise
         </button>
