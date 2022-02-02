@@ -27,7 +27,7 @@ const typeDefs = gql`
 		login(email: String!, password: String!): Auth
 		addUser(username: String!, email: String!, password: String!): Auth
 		addExercise(description: String!, duration: String!): Exercise
-		removeExercise(_Id: ID!): User
+		removeExercise(_Id: ID!): Exercise
 	}
 	type Auth {
 		token: ID!

@@ -101,6 +101,8 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
 
+    
+
     //Deletes Exercise data of exercise with _id, also updates user by removing _id from its exercise array
     removeExercise: async (parent, args, context) => {
       if (context.user) {
