@@ -13,7 +13,7 @@ const ExerciseList = ({ exercises, description }) => {
         exercises.map((exercise) => (
           <div key={exercise._id}>
             <p>
-              {exercise.username} did {exercise.description}
+              {exercise.username} did {exercise.description + ' '}
               for {exercise.duration} minutes, logged on {exercise.date}
             </p>
             <button>Edit</button>
