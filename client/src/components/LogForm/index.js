@@ -10,27 +10,33 @@ const LogForm = () => {
     date: '',
   });
 
-  const [addExercise, { error }] = useMutation(ADD_EXERCISE, {
-    update(cache, { data: { addExercise } }) {
-      try {
-        // update exercise array's cache
-        // could potentially not exist yet, so wrap in a try/catch
-        const { exercise } = cache.readQuery({ query: QUERY_EXERCISE });
-        cache.writeQuery({
-          query: QUERY_EXERCISE,
-          data: { export: [addExercise, ...exercise] },
-        });
-      } catch (e) {
-        console.error(e);
-      }
-    },
-  });
+  // const [addExercise, { error }] = useMutation(ADD_EXERCISE, {
+  //   update(cache, { data: { addExercise } }) {
+  //     try {
+  //       // update exercise array's cache
+  //       // could potentially not exist yet, so wrap in a try/catch
+  //       const { exercise } = cache.readQuery({ query: QUERY_EXERCISE });
+  //       cache.writeQuery({
+  //         query: QUERY_EXERCISE,
+  //         data: { export: [addExercise, ...exercise] },
+  //       });
+  //     } catch (e) {
+  //       console.error(e);
+  //     }
+  //   },
+  // });
+
+  const [addExercise, { error, loading, data }] = useMutation(ADD_EXERCISE)
 
   // update state based on form input changes
-  const handleChange = (event) => {
-    if (event.target.value) {
-      setFormState(event.target.value);
+  const handleChange = (event, input) => {
+    if (input === "exercise") {
+      setFormState({...formState, exercise: event.target.value});
     }
+    else if (input === "duration") {
+      setFormState({...formState, duration: event.target.value});
+    }
+    console.log(formState)
   };
 
   // submit form
@@ -39,11 +45,14 @@ const LogForm = () => {
 
     try {
       await addExercise({
-        variables: { formState },
-      });
+        variables: { description: formState.exercise, duration: formState.duration },
+      }).then((exercise) => {console.log(exercise)});
 
       // clear form value
-      setFormState('');
+      setFormState({
+        exercise: '',
+        duration: '',
+      });
     } catch (e) {
       console.error(e);
     }
@@ -53,11 +62,9 @@ const LogForm = () => {
       <h2 className="log-title">Log Your Exercises</h2>
       <form onSubmit={handleFormSubmit}>
         <label>Exercise Description:</label>
-        <input placeholder="exercise" onChange={handleChange}></input>
+        <input placeholder="exercise" onChange={(event)=> handleChange(event, "exercise")}></input>
         <label>Duration(minutes): </label>
-        <input placeholder="30" onChange={handleChange}></input>
-        <label>Date:</label>
-        <input placeholder="01/01/22" onChange={handleChange}></input>
+        <input placeholder="30" onChange={(event)=> handleChange(event, "duration")}></input>
         <button className="btn third" type="submit">
           Log Exercise
         </button>

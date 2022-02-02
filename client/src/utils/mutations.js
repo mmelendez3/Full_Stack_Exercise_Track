@@ -27,10 +27,9 @@ export const ADD_USER = gql`
 export const ADD_EXERCISE = gql`
   mutation addExercise(
     $description: String!
-    $date: String!
     $duration: String!
   ) {
-    addExercise(description: $description, date: $date, duration: $duration) {
+    addExercise(description: $description, duration: $duration) {
       _id
       description
       date
