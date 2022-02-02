@@ -1,13 +1,13 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import { QUERY_EXERCISE } from '../utils/queries';
+import { QUERY_EXERCISES } from '../utils/queries';
 import ExerciseList from '../components/ExerciseList';
 
 const Home = () => {
   // use useQuery hook to make query request
-  const { loading, data } = useQuery(QUERY_EXERCISE);
-  const exercise = data?.exercise || [];
-  console.log(exercise);
+  const { loading, data } = useQuery(QUERY_EXERCISES);
+  const exercises = data?.exercises || [];
+  console.log(exercises);
   return (
     <main>
       <div className="view-container form-container">
@@ -16,7 +16,7 @@ const Home = () => {
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <ExerciseList exercise={exercise} />
+            <ExerciseList exercises={exercises} />
           )}
         </div>
       </div>
