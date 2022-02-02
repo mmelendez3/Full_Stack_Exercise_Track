@@ -112,7 +112,7 @@ h6 {
 }
 
 .log-container {
-  width: 100%;
+  
 }
 
 .form-inline {
@@ -177,13 +177,6 @@ h6 {
   border-radius: 0.6em;
   color: #e74c3c;
   cursor: pointer;
-  /* display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-self: center;
-        -ms-flex-item-align: center;
-            align-self: center; */
   font-size: 1rem;
   font-weight: 400;
   line-height: 1;
@@ -218,7 +211,8 @@ footer {
   height: 50px;
   color: var(--quatrinary);
   padding-top: 20px;
-  position: fixed;
+  margin: 0 auto;
+  position: absolute;
   bottom: 0;
   text-align: center;
   background-color: var(--tertiary);
