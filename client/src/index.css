@@ -81,7 +81,7 @@ h6 {
   color: var(--quatrinary);
   padding: 30px;
   margin-left: 25px;
-  width: 500px;
+  width: 80%;
 }
 
 .form-label,
@@ -107,16 +107,11 @@ h6 {
 }
 
 .log-title {
-  margin-left: 50px;
   margin-top: 50px;
 }
 
-.log-container {
-  
-}
-
 .form-inline {
-  margin-left: 50px;
+  /* margin-left: 50px; */
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -211,7 +206,7 @@ footer {
   height: 50px;
   color: var(--quatrinary);
   padding-top: 20px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   position: absolute;
   bottom: 0;
   text-align: center;
@@ -219,15 +214,6 @@ footer {
 }
 
 @media (max-width: 1024px) {
-  body {
-    background-position: right center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url('assets/running.jpg');
-    margin: 0;
-    height: 100vh;
-  }
 
   header {
     text-align: center;

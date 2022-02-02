@@ -49,16 +49,16 @@ const LogForm = () => {
     }
   };
   return (
-    <div className="logForm">
+    <div className="log-container">
       <h2 className="log-title">Log Your Exercises</h2>
-      <form onSubmit={handleFormSubmit}>
-        <label>Exercise Description:</label>
-        <input placeholder="exercise" onChange={handleChange}></input>
-        <label>Duration(minutes): </label>
-        <input placeholder="30" onChange={handleChange}></input>
-        <label>Date:</label>
-        <input placeholder="01/01/22" onChange={handleChange}></input>
-        <button className="btn third" type="submit">
+      <form className="form-inline" onSubmit={handleFormSubmit}>
+        <label className="log-form-label">Exercise Description:</label>
+        <input className="log-form-input" placeholder="exercise" onChange={handleChange}></input>
+        <label className="log-form-label">Duration(minutes): </label>
+        <input className="log-form-input" placeholder="30" onChange={handleChange}></input>
+        <label className="log-form-label">Date:</label>
+        <input className="log-form-input" placeholder="01/01/22" onChange={handleChange}></input>
+        <button className="btn-log third" type="submit">
           Log Exercise
         </button>
       </form>
