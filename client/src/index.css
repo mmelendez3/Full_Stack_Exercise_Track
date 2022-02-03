@@ -65,6 +65,7 @@ body {
   background-size: cover;
   margin: 0;
   height: 100vh;
+  overflow: hidden;
 }
 
 h1,
@@ -206,14 +207,13 @@ footer {
   color: var(--quatrinary);
   padding-top: 20px;
   /* margin: 0 auto; */
-  position: absolute;
+  position: sticky;
   bottom: 0;
   text-align: center;
   background-color: var(--tertiary);
 }
 
 @media (max-width: 1024px) {
-
   header {
     text-align: center;
     flex-direction: column;
