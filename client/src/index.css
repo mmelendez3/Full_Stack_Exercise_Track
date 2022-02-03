@@ -273,6 +273,10 @@ footer {
     margin: -5px;
     padding: 0px;
   }
+
+  .exercise-div-container button {
+    margin-bottom: 10px;
+  }
 }
 
 @media (max-width: 800px) {

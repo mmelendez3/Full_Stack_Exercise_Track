@@ -12,12 +12,12 @@ const ExerciseList = ({ exercises, description }) => {
   }
 
   const clickHandler = () => {
-    const exerciseDiv = document.getElementById('exerciseDiv');
+    const exerciseDiv = document.getElementById('exercise-div-container');
     exerciseDiv.remove();
   };
 
   return (
-    <div className="exercise-div-container">
+    <div className="exercise-div-container" id="exercise-div-container">
       <h3>{description}</h3>
       {exercises &&
         exercises.map((exercise) => (
