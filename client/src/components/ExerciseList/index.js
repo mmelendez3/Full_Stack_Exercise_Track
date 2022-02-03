@@ -17,7 +17,7 @@ const ExerciseList = ({ exercises, description }) => {
   };
 
   return (
-    <div>
+    <div className="exercise-div-container">
       <h3>{description}</h3>
       {exercises &&
         exercises.map((exercise) => (
@@ -26,8 +26,10 @@ const ExerciseList = ({ exercises, description }) => {
               {exercise.username} did {exercise.description + ' '}
               for {exercise.duration} minutes, logged on {exercise.date}
             </p>
-            <button>Edit</button>
-            <button onClick={clickHandler}>Delete</button>
+            <button className="view-btn third">Edit</button>
+            <button className="view-btn third" onClick={clickHandler}>
+              Delete
+            </button>
           </div>
         ))}
     </div>
