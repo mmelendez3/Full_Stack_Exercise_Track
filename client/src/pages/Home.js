@@ -9,8 +9,8 @@ const Home = () => {
   const exercises = data?.exercises || [];
   console.log(exercises);
   return (
-    <main>
-      <div className="view-container form-container">
+    <main className="view-container">
+      <div className="content-wrap form-container">
         <div className="view-log">
           {' '}
           {loading ? (

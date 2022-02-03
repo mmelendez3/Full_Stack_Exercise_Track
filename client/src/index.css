@@ -201,13 +201,22 @@ h6 {
   box-shadow: 0 0 10px 0 var(--primary) inset, 0 0 10px 4px var(--primary);
 }
 
+.view-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  padding-bottom: 2.5rem;
+}
+
 footer {
   width: 100%;
-  height: 50px;
+  height: 2.5rem;
   color: var(--quatrinary);
   padding-top: 20px;
   /* margin: 0 auto; */
-  position: sticky;
+  position: absolute;
   bottom: 0;
   text-align: center;
   background-color: var(--tertiary);
