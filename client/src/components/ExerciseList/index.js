@@ -12,7 +12,7 @@ const ExerciseList = ({ exercises, description }) => {
   }
 
   const clickHandler = () => {
-    const exerciseDiv = document.getElementById('exercise-div-container');
+    const exerciseDiv = document.getElementById('exerciseDiv');
     exerciseDiv.remove();
   };
 
